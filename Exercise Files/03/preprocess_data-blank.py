@@ -2,21 +2,22 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 
 # Load training data set from CSV file
-training_data_df =
+training_data_df = pd.read_csv('sales_data_training.csv')
 
 # Load testing data set from CSV file
-test_data_df =
+test_data_df = pd.read_csv('sales_data_test.csv')
 
 # Data needs to be scaled to a small range like 0 to 1 for the neural
 # network to work well.
-scaler =
+scale_obj = MinMaxScaler(feature_range=(0, 1))
 
 # Scale both the training inputs and outputs
-scaled_training =
-scaled_testing =
+scaled_training = scale_obj.fit_transform(training_data_df)
+scaled_testing = scale_obj.transform(test_data_df)
 
 # Print out the adjustment that the scaler applied to the total_earnings column of data
-print("Note: total_earnings values were scaled by multiplying by {:.10f} and adding {:.6f}".format(scaler.scale_[8], scaler.min_[8]))
+print("Note: total_earnings values were scaled by multiplying by {:.10f} and adding {:.6f}".format(scale_obj.scale_[8],
+                                                                                                   scale_obj.min_[8]))
 
 # Create new pandas DataFrame objects from the scaled data
 scaled_training_df = pd.DataFrame(scaled_training, columns=training_data_df.columns.values)
