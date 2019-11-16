@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TerminalProjectOptionsProvider">
+    <envs>
+      <env key="Conda1" value="C:\Users\Alavi\Anaconda3\envs\deep-learning-keras" />
+      <env key="Conda2" value="C:\Users\Alavi\Anaconda3\envs\tf" />
+      <env key="Conda3" value="C:\Users\Alavi\Anaconda3\envs\tf-gpu" />
+    </envs>
+  </component>
+</project>
